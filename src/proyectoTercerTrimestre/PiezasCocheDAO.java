@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class PiezasCocheDAO {
 	
 	public void asignarPiezaAlCoche(Pieza pieza, Coche coche) {
-        String sql = "INSERT INTO PiezasCoche (Matricula, Codigo) VALUES (?, ?)";
+        String sql = "INSERT INTO PiezaCoche (Matricula, Codigo) VALUES (?, ?)";
         try (Connection conn = Conexion.getConnection();
              PreparedStatement consulta = conn.prepareStatement(sql)) {
         	consulta.setString(1, coche.getMatricula());

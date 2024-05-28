@@ -1,5 +1,8 @@
 package proyectoTercerTrimestre;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,6 +94,13 @@ public class Coche {
 	public void setPiezas(List<Pieza> piezas) {
 		this.piezas = piezas;
 	}
+	
+	public void añadirPieza(Pieza pieza) {
+        this.piezas.add(pieza);
+    }
+	
+
+    
 
 	
 

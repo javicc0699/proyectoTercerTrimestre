@@ -21,6 +21,14 @@ public class Pieza {
 	
 	
 	
+	@Override
+	public String toString() {
+		return "Pieza [codigo=" + codigo + ", pieza=" + pieza + ", calidad=" + calidad + ", caballosProp="
+				+ caballosProp + ", manejoProp=" + manejoProp + "]";
+	}
+
+
+
 	public int getCodigo() {
 		return codigo;
 	}

@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class PiezaDAO {
 	
-	public void crearPieza(Pieza pieza) {
+	public static void crearPieza(Pieza pieza) {
         String sql = "INSERT INTO Pieza (Codigo, Pieza, Calidad, CaballosProp, ManejoProp) VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = Conexion.getConnection();
              PreparedStatement consulta = conn.prepareStatement(sql)) {
@@ -17,9 +17,11 @@ public class PiezaDAO {
         	consulta.setDouble(5, pieza.getManejoProp());
         	consulta.executeUpdate();
         } catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
     }
+	
+	
 
 }
