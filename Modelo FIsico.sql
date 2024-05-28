@@ -11,13 +11,14 @@ CREATE TABLE Coche (
     Manejo DOUBLE NOT NULL
 );
 
-CREATE TABLE TipoPieza (
-    Pieza VARCHAR(15) PRIMARY KEY,
-    CaballosPorc DOUBLE,
-    ManejoPorc DOUBLE
+CREATE TABLE Pieza (
+    Codigo INT PRIMARY KEY,
+    Pieza VARCHAR(15) NOT NULL,
+    Calidad VARCHAR(45),
+    CaballosProp DOUBLE,
+    ManejoProp DOUBLE
 );
 
--- Crear tabla Circuito
 CREATE TABLE Circuito (
     idCircuito INT PRIMARY KEY,
     Curvas INT NOT NULL,
@@ -25,16 +26,11 @@ CREATE TABLE Circuito (
     Dificultad VARCHAR(15) NOT NULL
 );
 
-
-CREATE TABLE PiezasCoche (
+CREATE TABLE PiezaCoche (
+	Codigo INT PRIMARY KEY,
     Matricula VARCHAR(7),
-    Pieza VARCHAR(15),
-    Calidad VARCHAR(45),
-    CaballosPieza DOUBLE,
-    ManejoPieza DOUBLE,
-    PRIMARY KEY (Matricula, Pieza),
     FOREIGN KEY (Matricula) REFERENCES Coche(Matricula),
-    FOREIGN KEY (Pieza) REFERENCES TipoPieza(Pieza)
+    FOREIGN KEY (Codigo) REFERENCES Pieza(Codigo)
 );
 
 CREATE TABLE Competicion (
@@ -55,12 +51,3 @@ CREATE TABLE Participantes (
     FOREIGN KEY (Matricula) REFERENCES Coche(Matricula)
 );
 
-
-INSERT INTO Coche (Matricula, Marca, Modelo, Anyo, Caballos, Manejo)
-VALUES ('ABC1234', 'Nissan', 'GTR', '2020', 500, 70);
-
-INSERT INTO TipoPieza (Pieza, CaballosPorc, ManejoPorc)
-VALUES ('Motor', 140, 0);
-
-INSERT INTO Circuito (idCircuito, Curvas, Ubicacion, Dificultad)
-VALUES (1, 154, 'Alemania', 'Alta');
