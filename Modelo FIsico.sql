@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS proyecto;
 CREATE DATABASE proyecto CHARSET utf8mb4;
 USE proyecto;
-
+SET SQL_SAFE_UPDATES = 0;
 CREATE TABLE Coche (
     Matricula VARCHAR(7) PRIMARY KEY,
     Marca VARCHAR(45) NOT NULL,
@@ -50,4 +50,15 @@ CREATE TABLE Participantes (
     FOREIGN KEY (idCompeticion) REFERENCES Competicion(idCompeticion),
     FOREIGN KEY (Matricula) REFERENCES Coche(Matricula)
 );
+
+
+
+
+
+
+
+
+
+
+
 
