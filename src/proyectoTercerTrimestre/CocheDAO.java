@@ -9,14 +9,14 @@ public class CocheDAO {
     public void crearCoche(Coche coche) {
         String sql = "INSERT INTO Coche (Matricula, Marca, Modelo, Anyo, Caballos, Manejo) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = Conexion.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, coche.getMatricula());
-            pstmt.setString(2, coche.getMarca());
-            pstmt.setString(3, coche.getModelo());
-            pstmt.setString(4, coche.getAnyo());
-            pstmt.setDouble(5, coche.getCaballos());
-            pstmt.setDouble(6, coche.getManejo());
-            pstmt.executeUpdate();
+             PreparedStatement consulta = conn.prepareStatement(sql)) {
+        	consulta.setString(1, coche.getMatricula());
+        	consulta.setString(2, coche.getMarca());
+        	consulta.setString(3, coche.getModelo());
+        	consulta.setString(4, coche.getAnyo());
+        	consulta.setDouble(5, coche.getCaballos());
+        	consulta.setDouble(6, coche.getManejo());
+        	consulta.executeUpdate();
         } catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

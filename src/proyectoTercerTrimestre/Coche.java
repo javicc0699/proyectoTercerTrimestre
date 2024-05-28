@@ -1,5 +1,8 @@
 package proyectoTercerTrimestre;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Coche {
 	
 	 private final int TAMANO_MATRICULA = 7;
@@ -13,7 +16,7 @@ public class Coche {
 	 private String anyo;
 	 private double caballos;
 	 private double manejo;
-	 private PiezasCoche piezas[];
+	 private List<Pieza> piezas;
 	 
 	
 	 
@@ -28,7 +31,7 @@ public class Coche {
 		this.anyo = anyo;
 		this.caballos = caballos;
 		this.manejo = manejo;
-		PiezasCoche piezas[];
+		this.piezas = new ArrayList<>();
 	}
 
 	public void setMatricula(String matricula) {
@@ -81,9 +84,15 @@ public class Coche {
 		return manejo;
 	}
 
-	public PiezasCoche[] getPiezas() {
+	public List<Pieza> getPiezas() {
 		return piezas;
 	}
+
+	public void setPiezas(List<Pieza> piezas) {
+		this.piezas = piezas;
+	}
+
+	
 
 	 
 }
