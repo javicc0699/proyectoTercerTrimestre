@@ -37,3 +37,8 @@ BEGIN
     END IF;
 END $$
 DELIMITER ;
+
+INSERT INTO Coche (Matricula, Marca, Modelo, Anyo, Caballos, Manejo)
+VALUES ('ABC123', 'Toyota', 'Corolla', '2022', 250, 5);
+
+SELECT * FROM Coche WHERE Matricula = 'ABC123';
