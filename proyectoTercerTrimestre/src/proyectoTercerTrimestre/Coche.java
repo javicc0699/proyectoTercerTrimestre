@@ -95,7 +95,7 @@ public class Coche {
 		this.piezas = piezas;
 	}
 	
-	public void añadirPieza(Pieza pieza) {
+	public void agregarPieza(Pieza pieza) {
         this.piezas.add(pieza);
     }
 	

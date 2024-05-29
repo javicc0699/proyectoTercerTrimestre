@@ -105,7 +105,7 @@ public class Aplicacion {
      * @param coches Lista de coches en el garaje.
      */
 
-	protected static void crearCoche(List<Coche> coches) {
+	public static void crearCoche(List<Coche> coches) {
 		try {
 			CocheDAO conexionCoche = new CocheDAO();
 
@@ -436,7 +436,7 @@ public class Aplicacion {
 			}
 		}
 
-		coche.añadirPieza(pieza);
+		coche.agregarPieza(pieza);
 		System.out.println("Pieza añadida al coche con matrícula " + coche.getMatricula() + ".");
 		cocheDAO.asignarPiezaAlCoche(pieza, coche);
 		actualizarCoche(coche);
