@@ -105,7 +105,7 @@ public class Aplicacion {
      * @param coches Lista de coches en el garaje.
      */
 
-	private static void crearCoche(List<Coche> coches) {
+	protected static void crearCoche(List<Coche> coches) {
 		try {
 			CocheDAO conexionCoche = new CocheDAO();
 
